@@ -4,9 +4,10 @@ go 1.17
 
 require (
 	github.com/MelkoV/go-learn-logger v0.0.3
-	github.com/MelkoV/go-learn-proto v0.0.2
+	github.com/MelkoV/go-learn-proto v0.0.3
 	github.com/spf13/cobra v1.5.0
 	github.com/spf13/viper v1.13.0
+	google.golang.org/grpc v1.49.0
 )
 
 require (
@@ -27,7 +28,6 @@ require (
 	golang.org/x/sys v0.0.0-20220520151302-bc2c85ada10a // indirect
 	golang.org/x/text v0.3.7 // indirect
 	google.golang.org/genproto v0.0.0-20220519153652-3a47de7e79bd // indirect
-	google.golang.org/grpc v1.49.0 // indirect
 	google.golang.org/protobuf v1.28.1 // indirect
 	gopkg.in/ini.v1 v1.67.0 // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect

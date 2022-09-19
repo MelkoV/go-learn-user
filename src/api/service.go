@@ -10,7 +10,7 @@ import (
 )
 
 type Api struct {
-	pb.UnimplementedUserServer
+	pb.UnimplementedUserServiceServer
 	l *logger.CategoryLogger // @TODO change to interface
 }
 
@@ -20,7 +20,7 @@ func NewApi(l *logger.CategoryLogger) *Api {
 	}
 }
 
-func RunAPI(port int, l *logger.CategoryLogger) {
+func Serve(port int, l *logger.CategoryLogger) {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
 		l.Format("init", "00000000-0000-0000-0000-000000000000", "failed listen port %d: %s", port, err.Error()).Fatal()
@@ -30,7 +30,7 @@ func RunAPI(port int, l *logger.CategoryLogger) {
 
 	server := grpc.NewServer()
 	api := NewApi(l)
-	pb.RegisterUserServer(server, api)
+	pb.RegisterUserServiceServer(server, api)
 
 	reflection.Register(server)
 	if err := server.Serve(lis); err != nil {

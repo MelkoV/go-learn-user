@@ -17,7 +17,7 @@ var (
 			port := viper.GetInt("api.port")
 			l := logger.NewCategoryLogger("user/api", logger.NewStreamLog())
 			l.Format("init", "00000000-0000-0000-0000-000000000000", "starting API server on port %d", port).Info()
-			api.RunAPI(port, l)
+			api.Serve(port, l)
 		},
 	}
 )
