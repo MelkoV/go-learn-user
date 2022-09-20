@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/MelkoV/go-learn-logger/logger"
-	"github.com/MelkoV/go-learn-user/src/api"
+	"github.com/MelkoV/go-learn-user/api"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
