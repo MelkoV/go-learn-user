@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"github.com/MelkoV/go-learn-common/app"
 	"github.com/MelkoV/go-learn-logger/logger"
 	"github.com/MelkoV/go-learn-user/api"
 	"github.com/spf13/cobra"
@@ -16,7 +17,7 @@ var (
 		Run: func(cmd *cobra.Command, args []string) {
 			port := viper.GetInt("api.port")
 			l := logger.NewCategoryLogger("user/api", logger.NewStreamLog())
-			l.Format("init", "00000000-0000-0000-0000-000000000000", "starting API server on port %d", port).Info()
+			l.Format("init", app.SYSTEM_UUID, "starting API server on port %d", port).Info()
 			api.Serve(port, l)
 		},
 	}

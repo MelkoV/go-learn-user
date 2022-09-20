@@ -3,6 +3,7 @@ module github.com/MelkoV/go-learn-user
 go 1.17
 
 require (
+	github.com/MelkoV/go-learn-common v0.0.1
 	github.com/MelkoV/go-learn-logger v0.0.3
 	github.com/MelkoV/go-learn-proto v0.0.3
 	github.com/spf13/cobra v1.5.0

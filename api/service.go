@@ -2,6 +2,7 @@ package api
 
 import (
 	"fmt"
+	"github.com/MelkoV/go-learn-common/app"
 	"github.com/MelkoV/go-learn-logger/logger"
 	pb "github.com/MelkoV/go-learn-proto/proto/user"
 	"google.golang.org/grpc"
@@ -23,10 +24,10 @@ func NewApi(l *logger.CategoryLogger) *Api {
 func Serve(port int, l *logger.CategoryLogger) {
 	lis, err := net.Listen("tcp", fmt.Sprintf(":%d", port))
 	if err != nil {
-		l.Format("init", "00000000-0000-0000-0000-000000000000", "failed listen port %d: %s", port, err.Error()).Fatal()
+		l.Format("init", app.SYSTEM_UUID, "failed listen port %d: %s", port, err.Error()).Fatal()
 	}
 
-	l.Format("init", "00000000-0000-0000-0000-000000000000", "running API server on port %d", port).Info()
+	l.Format("init", app.SYSTEM_UUID, "running API server on port %d", port).Info()
 
 	server := grpc.NewServer()
 	api := NewApi(l)
@@ -34,6 +35,6 @@ func Serve(port int, l *logger.CategoryLogger) {
 
 	reflection.Register(server)
 	if err := server.Serve(lis); err != nil {
-		l.Format("init", "00000000-0000-0000-0000-000000000000", "failed to serve: %s", err.Error()).Fatal()
+		l.Format("init", app.SYSTEM_UUID, "failed to serve: %s", err.Error()).Fatal()
 	}
 }
