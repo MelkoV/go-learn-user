@@ -44,6 +44,8 @@ github.com/MelkoV/go-learn-logger v0.0.3 h1:SoUnnmTfYPR6NjDqexbiNVQzCH6/TrDF0rcK
 github.com/MelkoV/go-learn-logger v0.0.3/go.mod h1:k8avY/+a2eYQe7I68szob3ZC3i8bSkXV9ukic9HoOG8=
 github.com/MelkoV/go-learn-proto v0.0.3 h1:cZYX6eOOZd3+Vggi/B46yEBqsvxxSz7X76yx6FIZbes=
 github.com/MelkoV/go-learn-proto v0.0.3/go.mod h1:JVyYub0bb7oe0awVSzMMjIFzhUeD3th52xqC8gvLfXc=
+github.com/MelkoV/go-learn-proto v0.0.4 h1:l3ctIQC2lo4H2YfnxMCSbQ9C6de4OUXEXeXFx7LU2IQ=
+github.com/MelkoV/go-learn-proto v0.0.4/go.mod h1:JVyYub0bb7oe0awVSzMMjIFzhUeD3th52xqC8gvLfXc=
 github.com/antihax/optional v1.0.0/go.mod h1:uupD/76wgC+ih3iEmQUL+0Ugr19nfwCT1kdvxnR2qWY=
 github.com/census-instrumentation/opencensus-proto v0.2.1/go.mod h1:f6KPmirojxKA12rnyqOA5BBL4O983OfeGPqjHWSTneU=
 github.com/cespare/xxhash/v2 v2.1.1/go.mod h1:VGX0DQ3Q6kWi7AoAeZDth3/j3BFtOZR5XLFGgcrjCOs=

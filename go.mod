@@ -5,7 +5,7 @@ go 1.17
 require (
 	github.com/MelkoV/go-learn-common v0.0.1
 	github.com/MelkoV/go-learn-logger v0.0.3
-	github.com/MelkoV/go-learn-proto v0.0.3
+	github.com/MelkoV/go-learn-proto v0.0.4
 	github.com/spf13/cobra v1.5.0
 	github.com/spf13/viper v1.13.0
 	google.golang.org/grpc v1.49.0
