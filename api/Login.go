@@ -6,7 +6,9 @@ import (
 )
 
 func (s *Api) Login(ctx context.Context, in *pb.LoginRequest) (*pb.LoginResponse, error) {
-	s.l.Format("login", in.Uuid, "incoming request: %v", in).Info()
+	l := s.l.AddSubCategory("login")
+	l.WithUuid(in.Uuid)
+	l.Info("incoming request: %v", in)
 	cookies := []*pb.Cookie{
 		&pb.Cookie{
 			Name:   "test1",

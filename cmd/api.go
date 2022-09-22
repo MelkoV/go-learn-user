@@ -16,8 +16,8 @@ var (
 		Long:  ``,
 		Run: func(cmd *cobra.Command, args []string) {
 			port := viper.GetInt("api.port")
-			l := logger.NewCategoryLogger("user/api", logger.NewStreamLog())
-			l.Format("init", app.SYSTEM_UUID, "starting API server on port %d", port).Info()
+			l := logger.NewCategoryLogger(app.SYSTEM_UUID, "user/api", logger.NewStreamLog())
+			l.Info("starting API server on port %d", port)
 			api.Serve(port, l)
 		},
 	}
