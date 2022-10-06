@@ -1,6 +1,7 @@
 package cmd
 
 import (
+	"fmt"
 	"github.com/MelkoV/go-learn-common/app"
 	"github.com/MelkoV/go-learn-logger/logger"
 	"github.com/MelkoV/go-learn-user/api"
@@ -16,9 +17,17 @@ var (
 		Long:  ``,
 		Run: func(cmd *cobra.Command, args []string) {
 			port := viper.GetInt("api.port")
-			l := logger.NewCategoryLogger(app.SYSTEM_UUID, "user/api", logger.NewStreamLog())
+			l := logger.NewCategoryLogger("user/api", app.SYSTEM_UUID, logger.NewStreamLog())
 			l.Info("starting API server on port %d", port)
-			api.Serve(port, l)
+			dsn := fmt.Sprintf("host=%s user=%s password=%s dbname=%s port=%s sslmode=disable TimeZone=%s",
+				viper.GetString("db.host"),
+				viper.GetString("db.user"),
+				viper.GetString("db.password"),
+				viper.GetString("db.name"),
+				viper.GetString("db.port"),
+				viper.GetString("db.timeZone"),
+			)
+			api.Serve(port, l, dsn)
 		},
 	}
 )
